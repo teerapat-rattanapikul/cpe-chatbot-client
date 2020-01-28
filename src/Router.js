@@ -7,7 +7,7 @@ import Pages from './pages'
 export default () => (
     <BrowserRouter>
         <Switch>
-            <Route exact path='/' component={Pages.App} />
+            <Route exact path='/' component={Pages.index} />
         </Switch>
     </BrowserRouter>
 )

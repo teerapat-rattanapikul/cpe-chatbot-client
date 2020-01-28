@@ -1,5 +1,5 @@
-import App from './pages/App'
+import index from './pages/index'
 
 export default {
-    App
+    index
 }
