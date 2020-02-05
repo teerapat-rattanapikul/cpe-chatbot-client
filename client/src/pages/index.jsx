@@ -12,10 +12,16 @@ export default class App extends React.Component {
   }
 
   async getAPI() {
-    const callback = await api.get("/api/testAPI");
-    console.log(callback.data);
 
-    this.setState({ apiMsg: callback.data });
+    const body = JSON.stringify({
+      message:"เธอแย่มาก",
+      sessionId: "User1"
+    })
+
+    const callback = await api.post("api/dialogflowGateway", body);
+    console.log(callback.data.fulfillmentText);
+
+    this.setState({ apiMsg: callback.data.fulfillmentText });
   }
 
   render() {
