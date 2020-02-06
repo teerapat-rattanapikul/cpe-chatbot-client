@@ -84,6 +84,19 @@
     background-size: cover;
     border-radius: 50%;
   }
+  .swal-wide{
+    width:850px !important;
+}
+  .avatar-select{
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+    background: #ddd;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+  }
   .msg-bubble {
     max-width: 450px;
     padding: 15px;
