@@ -3,6 +3,7 @@ require('dotenv').config({ path: 'variables.env' });
 const express = require('express'),
     cors = require('cors'),
     app = express(),
+    webhookDialogflow = require('./webhook');
     processMessage = require('./process-message');
 
 
@@ -33,6 +34,11 @@ app.post('/api/dialogflowGateway', async (req, res) => {
         });
     }
 
+});
+
+
+app.post('/webhook', async (req, res)=>{
+    await webhookDialogflow(req,res);
 });
 
 
