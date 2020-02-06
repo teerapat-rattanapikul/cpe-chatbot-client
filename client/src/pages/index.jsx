@@ -3,29 +3,6 @@ import "../css/home.css";
 import api from "../api";
 
 export default class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      message: "",
-      apiMsg: "waiting.."
-    };
-    this.getAPI = this.getAPI.bind(this);
-  }
-
-  async getAPI(message) {
-    const body = JSON.stringify({
-      message: message,
-      sessionId: "User1"
-    });
-
-    this.setState({ apiMsg: "waiting..." });
-
-    const callback = await api.post("api/dialogflowGateway", body);
-    console.log(callback.data.fulfillmentText);
-
-    this.setState({ apiMsg: callback.data.fulfillmentText });
-  }
-
   render() {
     return (
       <React-fragment>
