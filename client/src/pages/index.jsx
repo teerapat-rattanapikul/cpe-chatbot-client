@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/home.css";
-import api from "../api";
+
 
 export default class App extends React.Component {
   render() {
