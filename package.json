@@ -27,7 +27,8 @@
     "dialogflow-fulfillment": "^0.6.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "firebase-admin": "^8.9.2"
+    "firebase-admin": "^8.9.2",
+    "http-status": "^1.4.2"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",

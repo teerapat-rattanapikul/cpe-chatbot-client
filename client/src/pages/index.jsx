@@ -6,17 +6,19 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      message: "",
       apiMsg: "waiting.."
     };
     this.getAPI = this.getAPI.bind(this);
   }
 
-  async getAPI() {
 
+
+  async getAPI(message) {
     const body = JSON.stringify({
-      message:"เธอแย่มาก",
+      message: message,
       sessionId: "User1"
-    })
+    });
 
     const callback = await api.post("api/dialogflowGateway", body);
     console.log(callback.data.fulfillmentText);
@@ -50,9 +52,24 @@ export default class App extends React.Component {
           </p>
           <div className="text-center">
             <h1 className="display-4">{this.state.apiMsg}</h1>
-            <button className="btn btn-primary" onClick={this.getAPI}>
-              get API
-            </button>
+
+            <form onSubmit={async (e) => {
+              e.preventDefault();
+              await this.getAPI(this.state.message);
+            }}>
+
+              <input
+                type="text"
+                value={this.state.message}
+                onChange={e => this.setState({ message: e.target.value })}
+                required
+              />
+
+              <button className="btn btn-primary">
+                Submit
+              </button>
+            </form>
+
           </div>
         </div>
       </React-fragment>

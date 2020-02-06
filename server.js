@@ -3,6 +3,7 @@ require('dotenv').config({ path: 'variables.env' });
 const express = require('express'),
     cors = require('cors'),
     app = express(),
+    httpStatus = require('http-status'),
     webhookDialogflow = require('./webhook');
     processMessage = require('./process-message');
 
@@ -29,7 +30,7 @@ app.post('/api/dialogflowGateway', async (req, res) => {
     } catch (error) {
 
         console.error(error);
-        res.json({
+        res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
             error: error
         });
     }
