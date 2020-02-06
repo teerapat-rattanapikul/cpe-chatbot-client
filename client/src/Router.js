@@ -8,6 +8,7 @@ export default () => (
     <BrowserRouter>
         <Switch>
             <Route exact path='/' component={Pages.index} />
+            <Route exact path='/app' component={Pages.Chat} />
         </Switch>
     </BrowserRouter>
 )

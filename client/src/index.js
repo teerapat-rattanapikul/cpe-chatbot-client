@@ -5,6 +5,7 @@ import './css/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
 
+import 'sweetalert2/src/sweetalert2.scss'
 
 import * as serviceWorker from './serviceWorker';
 import Router from './Router'

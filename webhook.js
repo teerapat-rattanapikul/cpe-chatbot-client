@@ -18,10 +18,8 @@ const webhookDialogflow = async (request, response) => {
     async function getSongRequest(agent) {
 
         try {
-
             const song = await db.doc(`/song/${queryResult.parameters.song}`).get();
             agent.add(song.data().verse);
-
         } catch (error) {
             console.error(error);
             agent.add('ฉันไม่รู้จักเพลงนั้น');
