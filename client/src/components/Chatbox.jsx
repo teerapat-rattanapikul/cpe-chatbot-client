@@ -39,9 +39,10 @@ export default class Chatbox extends React.Component {
       ice =
         "https://scontent.fbkk5-7.fna.fbcdn.net/v/t1.15752-9/70633252_499858997505310_2551079087695200256_n.jpg?_nc_cat=108&_nc_ohc=YQqykneXRsQAX_9yyKm&_nc_ht=scontent.fbkk5-7.fna&oh=29b7b7d27e960fa696c356a6ea133f52&oe=5ED186EC",
       pleum =
-        "https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.15752-9/82376166_522843711922248_6490645764165861376_n.jpg?_nc_cat=110&_nc_ohc=1-EQIXADfAYAX-z-_bd&_nc_ht=scontent.fbkk5-4.fna&oh=38e7b594ece32e4b33f29bf653fa15df&oe=5EBEE842",
+        "https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/84768336_188620725828585_105432702563385344_n.jpg?_nc_cat=107&_nc_ohc=QjVUqVjCONsAX-NaJBH&_nc_ht=scontent.fbkk10-1.fna&oh=6041d57eefe1a45d7b73e454e64b9f3e&oe=5EC8ADBF",
       boss =
-        "https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.15752-9/72339907_967070410302168_7327105479878901760_n.jpg?_nc_cat=103&_nc_ohc=xcdRQ8SVS0kAX9m8bD-&_nc_ht=scontent.fbkk5-4.fna&oh=da9cc4c1ee9f0f771cc8053d14cab1d6&oe=5ED5F108";
+        "https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.15752-9/72339907_967070410302168_7327105479878901760_n.jpg?_nc_cat=103&_nc_ohc=xcdRQ8SVS0kAX9m8bD-&_nc_ht=scontent.fbkk5-4.fna&oh=da9cc4c1ee9f0f771cc8053d14cab1d6&oe=5ED5F108",
+      por = "https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/84991232_617615495670365_6489035598106460160_n.jpg?_nc_cat=110&_nc_ohc=CtW3UYnft6gAX-F5oAi&_nc_ht=scontent.fbkk10-1.fna&oh=1cf258f6e9c8c1ca06dd8eab5fd5375a&oe=5ECD58C4"
 
     const inputOptions = new Promise(resolve => {
       setTimeout(() => {
@@ -50,7 +51,8 @@ export default class Chatbox extends React.Component {
           aof: `<img class="avatar-select" src="${aof}" width="150px"/><p>Winter man</p>`,
           ice: `<img class="avatar-select" src="${ice}" width="150px"/><p>impossibeman</p>`,
           pleum: `<img class="avatar-select" src="${pleum}" width="150px"/><p>talesrunner-man</p>`,
-          boss: `<img class="avatar-select" src="${boss}" width="150px" /><p>indy girl</p>`
+          boss: `<img class="avatar-select" src="${boss}" width="150px" /><p>indy girl</p>`,
+          por: `<img class="avatar-select" src="${por}" width="150px" /><p>boxing man</p>`
         });
       }, 1000);
     });
@@ -74,6 +76,7 @@ export default class Chatbox extends React.Component {
     else if (img === "ice") imgPath = ice;
     else if (img === "pleum") imgPath = pleum;
     else if (img === "boss") imgPath = boss;
+    else if (img === "por") imgPath = por;
     await this.setState({ user_img: imgPath });
     $(".img-sec").html(`<img src="${imgPath}" class="msg-img" />`)
   }
@@ -198,7 +201,7 @@ export default class Chatbox extends React.Component {
                   </div>
                   <div className="msg-text">
                     สวัสดี {this.state.user_name} ฉันคือ Bot ของ CPE-Chatbot
-                    มีอะไรให้รื้อ เอ้ย ให้ช่วย😄
+                    มีอะไรให้ช่วย😄
                   </div>
                 </div>
               </div>
