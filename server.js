@@ -1,12 +1,12 @@
 require('dotenv').config({ path: 'variables.env' });
 
-const express = require('express'),
-    cors = require('cors'),
-    app = express(),
-    httpStatus = require('http-status'),
-    webhookDialogflow = require('./webhook');
-    processMessage = require('./process-message');
+const express = require('express');
+const cors = require('cors');
+const httpStatus = require('http-status');
+const webhookDialogflow = require('./webhook');
+const processMessage = require('./process-message');
 
+const app = express();
 
 // Init Middleware
 app.use(express.json({ extended: false }));
@@ -22,11 +22,11 @@ app.post('/api/dialogflowGateway', async (req, res) => {
 
         const message = req.body.message;
         const sessionId = req.body.sessionId;
-        
-        const responseChat = await processMessage(message, sessionId);
 
+        const responseChat = await processMessage(message, sessionId);
+        console.log(JSON.stringify(responseChat));
         res.json(responseChat);
-        
+
     } catch (error) {
 
         console.error(error);
@@ -38,8 +38,8 @@ app.post('/api/dialogflowGateway', async (req, res) => {
 });
 
 
-app.post('/webhook', async (req, res)=>{
-    await webhookDialogflow(req,res);
+app.post('/webhook', async (req, res) => {
+    await webhookDialogflow(req, res);
 });
 
 

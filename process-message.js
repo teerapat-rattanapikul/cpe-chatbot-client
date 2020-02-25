@@ -1,6 +1,5 @@
-const { SessionsClient } = require('dialogflow');
+const dialogflow = require('dialogflow').v2;
 
-// You can find your project ID in your Dialogflow agent settings
 const projectId = process.env.dialogflow_project_id; //https://dialogflow.com/docs/agents#settings
 const languageCode = 'th';
 
@@ -12,7 +11,7 @@ const config = {
 };
 
 
-const sessionClient = new SessionsClient(config);
+const sessionClient = new dialogflow.SessionsClient(config);
 
 
 const processMessage = async (message, sessionId) => {
