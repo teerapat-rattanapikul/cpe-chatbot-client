@@ -15,7 +15,7 @@ export default class Chatbox extends React.Component {
       user_img: "https://image.flaticon.com/icons/svg/145/145867.svg",
       user_name: "",
       bot_img:
-        "https://www.vippng.com/png/detail/311-3114159_bot-eyes-angry-bot-png.png",
+        "https://image.flaticon.com/icons/svg/327/327779.svg",
       bot_name: "CPE-bot"
     };
 
