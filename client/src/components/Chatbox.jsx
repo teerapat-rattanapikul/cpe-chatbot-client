@@ -12,22 +12,23 @@ export default class Chatbox extends React.Component {
       msg: "",
       responseMsg: "",
       dateNow: "",
-      user_img: "https://praew.com/app/uploads/2019/04/68508.jpg",
+      user_img: "https://image.flaticon.com/icons/svg/145/145867.svg",
       user_name: "",
       bot_img:
-        "https://hilight.kapook.com/img_cms2/user/juthamat/jutha03/3_28.jpg",
-      bot_name: "O"
+        "https://www.vippng.com/png/detail/311-3114159_bot-eyes-angry-bot-png.png",
+      bot_name: "CPE-bot"
     };
 
     this.sendMsg = this.sendMsg.bind(this);
     this.setNickname = this.setNickname.bind(this);
   }
+
   componentWillMount() {
     this.setState({ dateNow: this.formatDate(new Date()) });
   }
 
   async componentDidMount() {
-    await this.selectAvatar();
+    // await this.selectAvatar();
     await this.setNickname();
   }
 
@@ -127,7 +128,6 @@ export default class Chatbox extends React.Component {
   }
 
   async sendMsg(msg) {
-    // const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
     if (this.state.msg !== "") {
       this.appendMessage(
         this.state.user_name,
@@ -152,8 +152,10 @@ export default class Chatbox extends React.Component {
 
   async botResponse() {
     // const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
-    if (this.state.responseMsg === "")
-      await this.setState({ responseMsg: "What ?" });
+    if (this.state.responseMsg === "whoami")
+      await this.setState({ responseMsg: `คุณชื่อ ${this.state.user_name}` });
+    if(this.state.responseMsg === "")
+      await this.setState({responseMsg : "อะไร ?"});
     await this.appendMessage(
       this.state.bot_name,
       this.state.bot_img,
@@ -169,7 +171,7 @@ export default class Chatbox extends React.Component {
         <hr />
         <div className="display-name collapse">
           <span className="img-sec"></span>
-          <h4 className="btn btn-dark">Name : {this.state.user_name}</h4>
+          <h4 className="btn btn-outline-dark">Name : {this.state.user_name}</h4>
         </div>
         <div className="m-box collapse">
           <section className="msger">
@@ -190,7 +192,7 @@ export default class Chatbox extends React.Component {
                   className="msg-img"
                   style={{
                     backgroundImage:
-                      "url(https://hilight.kapook.com/img_cms2/user/juthamat/jutha03/3_28.jpg)"
+                      `url(${this.state.bot_img})`
                   }}
                 ></div>
 
