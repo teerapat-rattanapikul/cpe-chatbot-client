@@ -1,10 +1,9 @@
 const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+
 const { WebhookClient } = require('dialogflow-fulfillment');
 
-admin.initializeApp();
+const getSongFullfilment = require('./fullfilment/getSongFullfilment');
 
-const db = admin.firestore();
 
 exports.dialogflowFirebaseFulfillment = functions.region('asia-east2')
     .https.onRequest((request, response) => {
@@ -13,13 +12,7 @@ exports.dialogflowFirebaseFulfillment = functions.region('asia-east2')
         const queryResult = request.body.queryResult;
 
         async function getSongRequest(agent) {
-            try {
-                const song = await db.doc(`/song/${queryResult.parameters.song}`).get();
-                agent.add(song.data().verse);
-            } catch (error) {
-                console.log(error)
-                agent.add('ฉันไม่รู้จักเพลงนั้น');
-            }
+            await getSongFullfilment(agent, queryResult);
         }
 
         let intentMap = new Map();
