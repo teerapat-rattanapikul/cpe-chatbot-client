@@ -8,3 +8,5 @@ steps <br/>
 5. <b>npm install<b>
 6. <b>add variables.env and firebase.json (โหลดได้ในกลุ่มแชท) to ./cpe-chatbot-client<b>
 7. <b>Run this project by "npm run dev"<b>
+<hr>
+  web deploy : https://cpe-chatbot-d4ebc.firebaseapp.com/
