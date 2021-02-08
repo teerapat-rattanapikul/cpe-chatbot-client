@@ -1,7 +1,7 @@
 # cpe-chatbot-client
 
 steps <br/>
-1. <b>git clone https://github.com/job25721/cpe-chatbot-client.git <b>
+1. <b>git clone https://github.com/teerapat-rattanapikul/cpe-chatbot-client.git <b>
 2. <b>cd cpe-chatbot-client<b>
 3. <b>npm install <b>
 4. <b>cd client<b>
